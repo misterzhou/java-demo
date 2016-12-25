@@ -1,0 +1,47 @@
+group 'org.guojing.test'
+description '测试代码'
+
+ext {
+    testVersion = '1.0-SNAPSHOT'
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    ext {
+        junitVersion = "4.11"
+        commonsLangVersion = '2.6'
+        commonsIOVersion = '2.4'
+        guiceVersion = '4.1.0'
+        nettyVersion = '4.0.36.Final'
+        springVersion = '4.2.6.RELEASE'
+        slf4jVersion = '1.7.12'
+    }
+
+    repositories {
+        mavenLocal()
+        maven {
+            url 'http://maven.aliyun.com/mvn/repository/'
+        }
+        jcenter()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    sourceCompatibility = 1.7
+    version = testVersion
+
+    dependencies {
+        testCompile("junit:junit:${junitVersion}")
+    }
+}

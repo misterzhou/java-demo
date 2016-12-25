@@ -1,0 +1,5 @@
+group 'org.guojing.test'
+version 'unspecified'
+
+dependencies {
+}

@@ -1,0 +1,5 @@
+dependencies {
+    compile("commons-lang:commons-lang:${commonsLangVersion}")
+    compile("commons-io:commons-io:${commonsIOVersion}")
+    compile("org.slf4j:slf4j-api:${slf4jVersion}")
+}

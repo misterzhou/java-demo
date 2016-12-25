@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.guojing.test.spring.server.GoodsRoomnight30daysMapper" >
+    <resultMap id="BaseResultMap" type="org.guojing.test.spring.server.GoodsRoomnight30days" >
+        <id column="goods_id" property="goodsId" jdbcType="BIGINT" />
+        <result column="checkin_room_night_30days" property="checkinRoomNight30days" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Example_Where_Clause" >
+        <where >
+            <foreach collection="oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause" >
+        <where >
+            <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List" >
+        goods_id, checkin_room_night_30days
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="org.guojing.test.spring.server.GoodsRoomnight30daysExample" >
+        select
+        <if test="distinct" >
+            distinct
+        </if>
+        <include refid="Base_Column_List" />
+        from goods_roomnight_30days
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+        <if test="orderByClause != null" >
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="Base_Column_List" />
+        from goods_roomnight_30days
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+        delete from goods_roomnight_30days
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </delete>
+    <delete id="deleteByExample" parameterType="org.guojing.test.spring.server.GoodsRoomnight30daysExample" >
+        delete from goods_roomnight_30days
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+    </delete>
+    <insert id="insert" parameterType="org.guojing.test.spring.server.GoodsRoomnight30days" >
+        insert into goods_roomnight_30days (goods_id, checkin_room_night_30days)
+        values (#{goodsId,jdbcType=BIGINT}, #{checkinRoomNight30days,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="org.guojing.test.spring.server.GoodsRoomnight30days" >
+        insert into goods_roomnight_30days
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="goodsId != null" >
+                goods_id,
+            </if>
+            <if test="checkinRoomNight30days != null" >
+                checkin_room_night_30days,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="goodsId != null" >
+                #{goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="checkinRoomNight30days != null" >
+                #{checkinRoomNight30days,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="org.guojing.test.spring.server.GoodsRoomnight30daysExample" resultType="java.lang.Integer" >
+        select count(*) from goods_roomnight_30days
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map" >
+        update goods_roomnight_30days
+        <set >
+            <if test="record.goodsId != null" >
+                goods_id = #{record.goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="record.checkinRoomNight30days != null" >
+                checkin_room_night_30days = #{record.checkinRoomNight30days,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null" >
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map" >
+        update goods_roomnight_30days
+        set goods_id = #{record.goodsId,jdbcType=BIGINT},
+        checkin_room_night_30days = #{record.checkinRoomNight30days,jdbcType=INTEGER}
+        <if test="_parameter != null" >
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="org.guojing.test.spring.server.GoodsRoomnight30days" >
+        update goods_roomnight_30days
+        <set >
+            <if test="checkinRoomNight30days != null" >
+                checkin_room_night_30days = #{checkinRoomNight30days,jdbcType=INTEGER},
+            </if>
+        </set>
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.guojing.test.spring.server.GoodsRoomnight30days" >
+        update goods_roomnight_30days
+        set checkin_room_night_30days = #{checkinRoomNight30days,jdbcType=INTEGER}
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </update>
+
+    <insert id="insertBatch" parameterType="list">
+        REPLACE INTO goods_roomnight_30days (goods_id, checkin_room_night_30days)
+        VALUES
+        <foreach collection="list" index="index" item="item" separator=",">
+            <choose>
+                <when test="item.value == null">(#{item.key}, 0)</when>
+                <when test="item.value != null">(#{item.key}, #{item.value})</when>
+            </choose>
+        </foreach>
+    </insert>
+
+</mapper>

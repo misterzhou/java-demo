@@ -1,0 +1,12 @@
+rootProject.name = 'test'
+
+include 'test-concurrent'
+include 'test-guice'
+include 'test-io'
+include 'test-core'
+include 'test-spring'
+include 'test-spring:spring-dao'
+include 'test-spring:spring-server'
+include 'test-spring:spring-commons'
+include 'test-spring:spring-service'
+
