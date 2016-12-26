@@ -1,7 +1,6 @@
-package org.guojing.test.spring.server;
+package org.guojing.spring.commons;
 
 import com.alibaba.fastjson.JSONObject;
-import org.guojing.spring.commons.ReportJSONObject;
 
 import java.util.Map;
 

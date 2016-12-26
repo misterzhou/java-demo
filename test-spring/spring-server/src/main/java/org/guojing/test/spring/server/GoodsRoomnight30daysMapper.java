@@ -1,6 +1,7 @@
 package org.guojing.test.spring.server;
 
 import org.apache.ibatis.annotations.Param;
+import org.guojing.spring.commons.KeyValue;
 
 import java.util.List;
 
