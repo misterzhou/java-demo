@@ -42,14 +42,14 @@ public class GoodsRoomnight30daysTest {
         records.add(new KeyValue<Long, Integer>(1730L, null));
         records.add(new KeyValue<Long, Integer>(1758L, null));
 
-        List<GoodsRoomnight30days> result = goodsRoomnight30daysMapper.selectByExample(new GoodsRoomnight30daysExample());
-        for (GoodsRoomnight30days item : result) {
-            System.out.println(item.toString());
-        }
         int deleted = goodsRoomnight30daysMapper.deleteByExample(new GoodsRoomnight30daysExample());
         System.out.println("----- deleted row size: " + deleted);
         int row = goodsRoomnight30daysMapper.insertBatch(records);
         System.out.println("----- affected row: " + row);
+        List<GoodsRoomnight30days> result = goodsRoomnight30daysMapper.selectByExample(new GoodsRoomnight30daysExample());
+        for (GoodsRoomnight30days item : result) {
+            System.out.println(item.toString());
+        }
     }
 
     @After
