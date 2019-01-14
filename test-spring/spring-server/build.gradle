@@ -1,6 +1,7 @@
 dependencies {
     compile project(":test-spring:spring-commons")
     compile project(":test-spring:spring-dao")
+    compile project(":test-spring:spring-service")
 
     compile "org.springframework:spring-core:${springVersion}"
     compile "org.springframework:spring-context:${springVersion}"

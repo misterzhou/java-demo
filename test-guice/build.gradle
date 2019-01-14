@@ -1,4 +1,4 @@
-apply plugin: 'application'
+//apply plugin: 'application'
 
 dependencies {
     compile("com.google.inject:guice:${guiceVersion}")

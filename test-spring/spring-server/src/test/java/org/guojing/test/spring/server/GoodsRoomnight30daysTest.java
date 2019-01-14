@@ -34,7 +34,7 @@ public class GoodsRoomnight30daysTest {
         goodsRoomnight30daysMapper = sqlSession.getMapper(GoodsRoomnight30daysMapper.class);
     }
 
-    @Test
+//    @Test
     public void test() {
         List<KeyValue<Long, Integer>> records = new ArrayList<>();
         records.add(new KeyValue<Long, Integer>(1725L, 5));

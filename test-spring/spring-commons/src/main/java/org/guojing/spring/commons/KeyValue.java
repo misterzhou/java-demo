@@ -9,7 +9,7 @@ import java.util.Map;
  *
  * @author guojing
  */
-public class KeyValue<K, V> implements Map.Entry<K, V> {
+public class KeyValue<K, V> {
 
     private K key;
     private V value;
@@ -22,17 +22,14 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
         this.value = value;
     }
 
-    @Override
     public K getKey() {
         return key;
     }
 
-    @Override
     public V getValue() {
         return value;
     }
 
-    @Override
     public V setValue(V value) {
         V oldValue = this.value;
         this.value = value;

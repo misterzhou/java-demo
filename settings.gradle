@@ -1,4 +1,4 @@
-rootProject.name = 'test'
+rootProject.name = 'my-demo'
 
 include 'test-concurrent'
 include 'test-guice'
@@ -9,4 +9,6 @@ include 'test-spring:spring-dao'
 include 'test-spring:spring-server'
 include 'test-spring:spring-commons'
 include 'test-spring:spring-service'
+include 'test-newfeature'
+include 'test-springboot'
 

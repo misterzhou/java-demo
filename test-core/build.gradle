@@ -3,4 +3,11 @@ dependencies {
     compile("commons-io:commons-io:${commonsIOVersion}")
     compile("commons-codec:commons-codec:1.9")
     compile("org.slf4j:slf4j-api:${slf4jVersion}")
+    compile("io.netty:netty-all:${nettyVersion}")
+    compile "com.google.guava:guava:${googleGuavaVersion}"
+    compile("org.apache.logging.log4j:log4j-api:${log4jVersion}")
+    compile("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+    compile("org.apache.logging.log4j:log4j-1.2-api:${log4jVersion}")
+    compile("log4j:log4j:1.2.17")
+    compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
 }
