@@ -1,0 +1,8 @@
+dependencies {
+    compile project (":demo-spring:spring-commons")
+    compile project (":demo-spring:spring-dao")
+
+    compile "org.springframework:spring-core:${springVersion}"
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-beans:${springVersion}"
+}

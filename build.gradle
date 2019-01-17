@@ -1,4 +1,4 @@
-group 'org.guojing.test'
+group 'org.guojing.demo'
 description '测试代码'
 
 ext {
