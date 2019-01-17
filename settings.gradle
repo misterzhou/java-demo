@@ -11,4 +11,5 @@ include 'demo-spring:spring-commons'
 include 'demo-spring:spring-service'
 include 'demo-newfeature'
 include 'demo-springboot'
+include 'demo-design-pattern'
 
